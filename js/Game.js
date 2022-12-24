@@ -14,4 +14,17 @@ class Game {
         ];
         this.activePhrase = "null";
     }
+
+
+    /**
+     * Select random phrases from phrases property
+     * @return {Object} Phrase object to be used
+     */
+
+    getRandomPhrase(){
+      const randomNumber = Math.floor( Math.random() * this.phrases.length );
+      const randomPhrase = this.phrases[randomNumber];
+      return randomPhrase;
+    }
+    
 }
