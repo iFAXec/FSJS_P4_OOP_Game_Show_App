@@ -11,15 +11,30 @@ class Phrase {
     /**
      * Display phrase on game board
      */
-    addPhraseToDisplay(){
-        if(){
-
-            
-        }
-
-
+addPhraseToDisplay(){
+    const phraseArray = this.phrase.split("");
+    let htmlPhrase = `
+    <div id="phrase" class="section">
+    <ul>
+    
+    
+    </ul>    
+    </div>
+    `;
+    phraseArray.forEach(letter => {
+     if(letter === ""){
+        ul.innerHTML += `
+        <li class="letter">${letter}</li>
+        `        
     }
-
+    if(letter === " "){
+        ul.innerHTML += `
+        <li class="space">" "</li>        
+        `
+    }       
+      });
+      return htmlPhrase;
+    }    
     
 }
 
