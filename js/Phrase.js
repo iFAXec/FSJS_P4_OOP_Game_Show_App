@@ -15,7 +15,7 @@ addPhraseToDisplay(){
     const phraseArray = this.phrase.split("");
     let htmlPhrase = `
     <div id="phrase" class="section">
-    <ul>
+    <ul class = htmlUl>
     
     
     </ul>    
