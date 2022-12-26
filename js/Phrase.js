@@ -13,22 +13,24 @@ class Phrase {
      */
 addPhraseToDisplay(){
     const phraseArray = this.phrase.split("");
-    let htmlPhrase = "";    
+    const ul = document.querySelector("#phrase ul");
+
+    let htmlPhrase = " ";    
     htmlPhrase += `<div id="phrase" class="section">`;
     htmlPhrase += `<ul>`;
 
     phraseArray.forEach(letter => {
-     if(letter === ""){
+     if(letter !== " "){
         htmlPhrase += `<li class="letter">${letter}</li>`;            
     }
     if(letter === " "){
-        htmlPhrase += `<li class="space">" "</li>`;
+        htmlPhrase += `<li class="space">${" "}</li>`;
     }          
     });
     htmlPhrase += `</ul>`
     htmlPhrase += `</div>`
-    return htmlPhrase;
-    }    
     
+    ul.innerHTML = htmlPhrase;
+    }    
 }
 
