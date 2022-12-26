@@ -26,5 +26,14 @@ class Game {
       const randomPhrase = this.phrases[randomNumber];
       return randomPhrase;
     }
+
+    /**
+     * Begins game by selecting a random phrase and displaying it to user
+     */
+    startGame(){
+     this.getRandomPhrase();
+     Phrase.addPhraseToDisplay();
+     this.activePhrase = Phrase;
+    }
     
 }
