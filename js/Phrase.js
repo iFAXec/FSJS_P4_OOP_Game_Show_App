@@ -33,25 +33,29 @@ addPhraseToDisplay(){
     ul.innerHTML = htmlPhrase;
     }
     
+
+    //source: https://stackoverflow.com/questions/35948669/how-to-check-if-a-value-exists-in-an-object-using-javascript
     /**
      * Check if passed letter is in phrase
      * @param {string} letter - Letter to check 
      */
     checkLetter(letter){
-        game.activePhrase.forEach(element =>{
-            if(letter === element){
-                return letter;
+        Object.keys(this.phrase).forEach(function(key) {
+            if (this.phrase[key] == letter) {
+                return true;
             }
-        });
+          });      
     }
 
     showMatchedLetter(letter){
         const allLetters = document.querySelectorAll(".key");
-        
-        if(allLetters === letter){
-            letter.classList.add("show");
-            letter.classList.remove("hide");
-        }
+
+        allLetters.forEach(letterElement =>{
+            if(letterElement === letter){
+                letterElement.classList.add("show");
+                letterElement.classList.remove("hide");
+            }
+        });       
     }
 }
 
