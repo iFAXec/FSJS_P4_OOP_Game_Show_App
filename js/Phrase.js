@@ -45,12 +45,13 @@ addPhraseToDisplay(){
         });
     }
 
-    showMatchedLetter(){
-        const selectedLetter = document.getElementsByClassName("letter");
+    showMatchedLetter(letter){
+        const allLetters = document.querySelectorAll(".key");
         
-
-
+        if(allLetters === letter){
+            letter.classList.add("show");
+            letter.classList.remove("hide");
+        }
     }
-
 }
 
