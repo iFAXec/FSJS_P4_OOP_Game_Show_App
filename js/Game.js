@@ -33,9 +33,15 @@ class Game {
     startGame(){
         const overlayButton = document.getElementById("overlay");
         overlayButton.style.display="none";
-        
+
         this.activePhrase = this.getRandomPhrase();     
         this.activePhrase.addPhraseToDisplay();    
     }
+
+
+    handleInteraction(){
+        
+    }
+
     
 }

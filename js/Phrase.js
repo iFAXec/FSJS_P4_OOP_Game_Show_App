@@ -31,6 +31,26 @@ addPhraseToDisplay(){
     htmlPhrase += `</div>`
     
     ul.innerHTML = htmlPhrase;
-    }    
+    }
+    
+    /**
+     * Check if passed letter is in phrase
+     * @param {string} letter - Letter to check 
+     */
+    checkLetter(letter){
+        game.activePhrase.forEach(element =>{
+            if(letter === element){
+                return letter;
+            }
+        });
+    }
+
+    showMatchedLetter(){
+        const selectedLetter = document.getElementsByClassName("letter");
+        
+
+
+    }
+
 }
 

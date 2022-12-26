@@ -2,6 +2,15 @@
  * Project 4 - OOP Game App
  * app.js */
 
+let game;
+const buttonReset = document.getElementById("btn__reset");
+
+buttonReset.addEventListener("click", ()=>{
+    game = new Game;
+    game.startGame();
+});
+
+
 
 //Testing
 //const phrase = new Phrase("Life is like a box of chocolate");
@@ -23,9 +32,8 @@
 // logPhrase(game.getRandomPhrase());
 // logPhrase(game.getRandomPhrase());
 
-const game = new Game();
-game.getRandomPhrase().addPhraseToDisplay();
+// const game = new Game();
+// game.getRandomPhrase().addPhraseToDisplay();
 
-
-game.startGame();
-console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+// game.startGame();
+// console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
