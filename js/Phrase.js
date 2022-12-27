@@ -34,17 +34,17 @@ addPhraseToDisplay(){
     }
     
 
-    //source: https://stackoverflow.com/questions/35948669/how-to-check-if-a-value-exists-in-an-object-using-javascript
+    //Reference: https://stackoverflow.com/questions/35948669/how-to-check-if-a-value-exists-in-an-object-using-javascript
     /**
      * Check if passed letter is in phrase
      * @param {string} letter - Letter to check 
      */
     checkLetter(letter){
-        Object.keys(this.phrase).forEach(function(key) {
-            if (this.phrase[key] == letter) {
-                return true;
+        Object.values(game.activePhrase.phrase).forEach(function(values) {
+            if (game.activePhrase.phrase[values] === letter) {
+              return true;
             }
-          });      
+          });     
     }
 
     showMatchedLetter(letter){
