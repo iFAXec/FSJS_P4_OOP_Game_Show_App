@@ -43,6 +43,8 @@ addPhraseToDisplay(){
         Object.values(game.activePhrase.phrase).forEach(function(values) {
             if (game.activePhrase.phrase[values] === letter) {
               return true;
+            }else{
+                return false;
             }
           });     
     }
