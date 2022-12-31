@@ -38,6 +38,20 @@ class Game {
         this.activePhrase.addPhraseToDisplay();    
     }
 
+    /**
+     * Checks for winning move
+     * @return {Boolean} True if game has been won, false if game wasn't
+     */
+    checkin(){
+        const checkPhrase = this.activePhrase;
+        for (let i= 0; i < checkPhrase.length; i++) {
+
+            
+        }
+        
+        
+    }
+
 
     handleInteraction(){
         
