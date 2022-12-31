@@ -40,24 +40,23 @@ addPhraseToDisplay(){
      * @param {string} letter - Letter to check 
      */
     checkLetter(letter){
-        Object.values(game.activePhrase.phrase).forEach(function(values) {
-            if (game.activePhrase.phrase[values] === letter) {
-              return true;
-            }else{
-                return false;
-            }
-          });     
+        return this.phrase.includes(letter);      
     }
 
-    showMatchedLetter(letter){
-        const allLetters = document.querySelectorAll(".key");
+    /**
+     * Displays passed letter on screen after a match is found
+     * @param {string} letter - Letter to display
+     */
 
-        allLetters.forEach(letterElement =>{
-            if(letterElement === letter){
-                letterElement.classList.add("show");
-                letterElement.classList.remove("hide");
+    showMatchedLetter(letter){
+        const selectedLetters = document.querySelectorAll(".letter"); 
+        
+        selectedLetters.forEach(selectedLetter =>{
+            if (selectedLetter === letter) {
+                letter.classList.add("show");
+                letter.classList.remove("hide");                
             }
-        });       
+        })          
     }
 }
 
