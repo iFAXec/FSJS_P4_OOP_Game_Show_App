@@ -42,14 +42,15 @@ class Game {
      * Checks for winning move
      * @return {Boolean} True if game has been won, false if game wasn't
      */
-    checkin(){
-        const checkPhrase = this.activePhrase;
-        for (let i= 0; i < checkPhrase.length; i++) {
-
-            
-        }
-        
-        
+    checkForWin(){
+        const letters = document.querySelectorAll(".letter");
+        for (const char of letters) {           
+            if(char.classList.contains("show")){
+                return true;
+            }else{
+                return false;
+            }         
+        }     
     }
 
 
