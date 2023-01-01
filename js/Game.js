@@ -52,7 +52,40 @@ class Game {
             }         
         }     
     }
+    /**
+     * Increases the value of missed property
+     * remove a life from scroreboard
+     * Check if player has remaining lives and end game if player is out
+     */
+    removeLife(){   
+        const hearts = document.querySelectorAll(".tries");
 
+        for (let i = 0; i < hearts.length; i++) {
+            const heart = hearts[i];
+            heart.src = "images/lostHeart.png";
+            this.missed += 1;           
+        }
+        if(this.missed === 5){
+            game.gameOver();
+        }
+    }
+
+    /**
+     * Displays game over message
+     * @param {Boolean} gameWon - Weather or not user won the game
+     */
+    //if all the empty boxes are occupied and hearts < 5
+    //
+    gameOver(){
+        const gameOverMessage = document.getElementById("game-over-message");
+        const startOverlay = document.querySelector("#overlay");
+
+        if(this.missed === 5){
+            gameOverMessage.innerHTML = "Sorry!,better luck next time";
+        } else{
+            startOverlay.innerHTML = "Great job!"
+        }
+    }
 
     handleInteraction(){
         
