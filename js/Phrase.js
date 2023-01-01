@@ -21,7 +21,7 @@ addPhraseToDisplay(){
 
     phraseArray.forEach(letter => {
      if(letter !== " "){
-        htmlPhrase += `<li class="letter">${letter}</li>`;            
+        htmlPhrase += `<li class="hide letter">${letter}</li>`;            
     }
     if(letter === " "){
         htmlPhrase += `<li class="space">${" "}</li>`;
@@ -49,14 +49,14 @@ addPhraseToDisplay(){
      */
 
     showMatchedLetter(letter){
-        const selectedLetters = document.querySelectorAll(".letter"); 
-        
-        selectedLetters.forEach(selectedLetter =>{
-            if (selectedLetter === letter) {
-                letter.classList.add("show");
-                letter.classList.remove("hide");                
-            }
-        })          
+    const selectedLetters = document.querySelectorAll(".letter");
+
+    for (const char of selectedLetters) {
+        if (char.innerHTML === letter) {
+            char.classList.add("show");
+            char.classList.remove("hide");       
     }
+}
+}
 }
 
