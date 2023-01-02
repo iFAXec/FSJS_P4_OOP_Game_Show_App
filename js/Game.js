@@ -85,13 +85,13 @@ class Game {
         startOverlay.style.display = "block";
 
         if(this.missed === 5){
-            gameOverMessage.innerHTML = "Sorry!,better luck next time";
+            gameOverMessage.innerHTML = "Sorry!,Better Luck Next Time";
             startOverlay.classList.add("lose");
             startOverlay.classList.remove("start");
-        } else{
-            startOverlay.innerHTML = "Great job!"
+        } else{            
+            startOverlay.innerHTML = "You Win!, Great Job!"
             startOverlay.classList.add("win");
-            startOverlay.classList.remove("start");
+            startOverlay.classList.remove("start");            
         }
     }
 
