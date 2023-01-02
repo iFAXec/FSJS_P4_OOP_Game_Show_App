@@ -58,9 +58,9 @@ class Game {
      * Check if player has remaining lives and end game if player is out
      */
     removeLife(){   
-        const hearts = document.getElementsByClassName("tries");
-        this.missed += 1
-        hearts[this.missed].src = "images/lostHeart.png";
+        const hearts = document.getElementsByClassName("tries");        
+        hearts[this.missed].firstChild.src = "images/lostHeart.png";
+        this.missed += 1;
 
         // for (let i = 0; i < hearts.length; i++) {
         //     const heart = hearts[i];
