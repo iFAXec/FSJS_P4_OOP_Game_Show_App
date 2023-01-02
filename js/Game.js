@@ -58,15 +58,18 @@ class Game {
      * Check if player has remaining lives and end game if player is out
      */
     removeLife(){   
-        const hearts = document.querySelectorAll(".tries");
+        const hearts = document.getElementsByClassName("tries");
+        this.missed += 1
+        hearts[this.missed].src = "images/lostHeart.png";
 
-        for (let i = 0; i < hearts.length; i++) {
-            const heart = hearts[i];
-            heart.src = "images/lostHeart.png";
-            this.missed += 1;           
-        }
+        // for (let i = 0; i < hearts.length; i++) {
+        //     const heart = hearts[i];
+        //     heart.src = "images/lostHeart.png";
+        //     this.missed += 1;           
+        // }
+        
         if(this.missed === 5){
-            game.gameOver();
+            this.gameOver();
         }
     }
 
@@ -78,12 +81,17 @@ class Game {
     //
     gameOver(){
         const gameOverMessage = document.getElementById("game-over-message");
-        const startOverlay = document.querySelector("#overlay");
+        const startOverlay = document.querySelector(".start");
+        startOverlay.style.display = "block";
 
         if(this.missed === 5){
             gameOverMessage.innerHTML = "Sorry!,better luck next time";
+            startOverlay.classList.add("lose");
+            startOverlay.classList.remove("start");
         } else{
             startOverlay.innerHTML = "Great job!"
+            startOverlay.classList.add("win");
+            startOverlay.classList.remove("start");
         }
     }
 
