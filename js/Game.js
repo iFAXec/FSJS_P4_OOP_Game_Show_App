@@ -100,20 +100,27 @@ class Game {
      * Handles onscreen keyboard button clicks
      * @param {HTMLButtonElement} button - The clicked button element
      */
+    //disables selected letter upon click
     handleInteraction(button) {    
         const letters = document.querySelectorAll(".letter");    
-        const keyboardButtons = document.querySelectorAll("#qwerty");  
-        if(keyboardButtons.clicked){
-            keyboardButtons.disabled = true;
-        }        
+        const keyboardButtons = document.querySelectorAll("#qwerty");
+
+        keyboardButtons.onclick = function() {            
+            this.disabled = true;
+        }
+
+          
         if(letters.innerHTML !== keyboardButtons.innerHTML){
-            keyboardButtons.clicked.classList.add("wrong");
+            keyboardButtons.classList.add("wrong");
             this.removeLife();
         } else {
-            keyboardButtons.clicked.classList.add("chosen");
-            Phrase.showMatchedLetter();
-            this.checkForWin();
+            keyboardButtons.classList.add("chosen");
+            Phrase.showMatchedLetter();            
         }
+
+        if(this.checkForWin()){
+            this.gameOver();
+        }        
     };
 
     
