@@ -95,9 +95,26 @@ class Game {
         }
     }
 
-    handleInteraction(){
-        
-    }
+
+    /**
+     * Handles onscreen keyboard button clicks
+     * @param {HTMLButtonElement} button - The clicked button element
+     */
+    handleInteraction(button) {    
+        const letters = document.querySelectorAll(".letter");    
+        const keyboardButtons = document.querySelectorAll("#qwerty");  
+        if(keyboardButtons.clicked){
+            keyboardButtons.disabled = true;
+        }        
+        if(letters.innerHTML !== keyboardButtons.innerHTML){
+            keyboardButtons.clicked.classList.add("wrong");
+            this.removeLife();
+        } else {
+            keyboardButtons.clicked.classList.add("chosen");
+            Phrase.showMatchedLetter();
+            this.checkForWin();
+        }
+    };
 
     
 }

@@ -10,6 +10,18 @@ buttonReset.addEventListener("click", ()=>{
     game.startGame();
 });
 
+const keyboardButtons = document.querySelectorAll("#qwerty");
+
+keyboardButtons.forEach(keyboardButton => {    
+    keyboardButton.addEventListener("click", (e)=>{                        
+        e.target === "BUTTON";
+       game.handleInteraction();
+                   
+    });         
+});
+
+
+
 
 
 //Testing
