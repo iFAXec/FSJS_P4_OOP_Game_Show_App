@@ -1,16 +1,16 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * app.js */
+const buttonReset = document.getElementById("btn__reset");
+const liItems = document.querySelectorAll("#phrase li");
+const keyboardButtons = document.querySelectorAll("#qwerty");
+const hearts = document.getElementsByClassName("tries");        
 
 let game;
-const buttonReset = document.getElementById("btn__reset");
-
 buttonReset.addEventListener("click", ()=>{
     game = new Game;
-    game.startGame();
+    game.startGame();    
 });
-
-const keyboardButtons = document.querySelectorAll("#qwerty");
 
 keyboardButtons.forEach(keyboardButton => {    
     keyboardButton.addEventListener("click", (e)=>{                        
@@ -18,6 +18,25 @@ keyboardButtons.forEach(keyboardButton => {
        game.handleInteraction(e.target);                   
     });         
 });
+
+
+if(game.gameOver()){
+    buttonReset.addEventListener("click", ()=>{
+        liItems.forEach(liItem =>{
+            liItem.parentNode.removeChild();
+        })
+
+        if(keyboardButtons.classList.contains("wrong")){
+            keyboardButtons.classList.remove("wrong");
+        }else if(keyboardButtons.classList.contains("chosen")){
+            keyboardButtons.classList.remove("chosen");
+        }
+
+       for(const heart of hearts) {
+            heart.src = "images/liveHeart.png";            
+        }
+    });
+}
 
 
 
