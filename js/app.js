@@ -14,9 +14,8 @@ const keyboardButtons = document.querySelectorAll("#qwerty");
 
 keyboardButtons.forEach(keyboardButton => {    
     keyboardButton.addEventListener("click", (e)=>{                        
-        e.target === "BUTTON";
-       game.handleInteraction();
-                   
+        if(e.target.tagName === "BUTTON");
+       game.handleInteraction(e.target);                   
     });         
 });
 
