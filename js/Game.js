@@ -141,5 +141,10 @@ class Game {
     }
 }
 
+const buttonReset = document.getElementById("btn__reset");
+
+buttonReset.addEventListener("click", ()=>{
+    this.resetGame();
+});
     
 }
