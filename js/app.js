@@ -3,6 +3,7 @@
  * app.js */
 const buttonReset = document.getElementById("btn__reset");
 const keyboardButtons = document.querySelectorAll("#qwerty");
+const keyRows = document.querySelectorAll(".keyrow");
 const hearts = document.getElementsByClassName("tries");        
 
 let game;

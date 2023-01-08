@@ -102,6 +102,7 @@ class Game {
      */
     //disables selected letter upon click
     handleInteraction(button) {  
+        console.log(button);
         button.disabled = true;
         
         if(this.activePhrase.checkLetter(button.innerHTML)){
