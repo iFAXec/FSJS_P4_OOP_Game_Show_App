@@ -104,9 +104,9 @@ class Game {
     handleInteraction(button) {  
         button.disabled = true;
         
-        if(this.phrase.checkLetter(button.innerHTML)){
+        if(this.activePhrase.checkLetter(button.innerHTML)){
             button.classList.add("chosen");
-            phrase.showMatchedLetter();
+            this.activePhrase.showMatchedLetter();
             this.checkForWin();
         } else{
             button.classList.add("wrong");
@@ -117,6 +117,28 @@ class Game {
             this.gameOver();
         }        
     };
+
+    
+    resetGame(){
+        const liItems = document.querySelectorAll("#phrase li");
+       if(gameOver()){
+            buttonReset.addEventListener("click", ()=>{
+              liItems.forEach(liItem =>{
+               liItem.parentNode.removeChild();
+               })
+    
+             if(keyboardButtons.classList.contains("wrong")){
+                keyboardButtons.classList.remove("wrong");
+               }else if(keyboardButtons.classList.contains("chosen")){
+               keyboardButtons.classList.remove("chosen");
+              }
+    
+           for(const heart of hearts) {
+                heart.src = "images/liveHeart.png";            
+            }
+        });
+    }
+}
 
     
 }
