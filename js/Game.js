@@ -121,7 +121,9 @@ class Game {
 
     
     resetGame(){
+
         const liItems = document.querySelectorAll("#phrase li");
+
        if(gameOver()){
             buttonReset.addEventListener("click", ()=>{
               liItems.forEach(liItem =>{
@@ -137,14 +139,14 @@ class Game {
            for(const heart of hearts) {
                 heart.src = "images/liveHeart.png";            
             }
-        });
+        })
     }
-}
+};
 
 const buttonReset = document.getElementById("btn__reset");
 
 buttonReset.addEventListener("click", ()=>{
     this.resetGame();
 });
-    
+
 }
