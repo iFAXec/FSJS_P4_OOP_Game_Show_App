@@ -120,31 +120,21 @@ class Game {
     };
 
     
-    resetGame(){
-
-        const liItems = document.querySelectorAll("#phrase li");
-
-       if(gameOver()){
-            buttonReset.addEventListener("click", ()=>{
-              liItems.forEach(liItem =>{
-               liItem.parentNode.removeChild();
-               })
-    
-             if(keyboardButtons.classList.contains("wrong")){
-                keyboardButtons.classList.remove("wrong");
-               }else if(keyboardButtons.classList.contains("chosen")){
-               keyboardButtons.classList.remove("chosen");
-              }
-    
-           for(const heart of hearts) {
-                heart.src = "images/liveHeart.png";            
-            }
+    resetGame(){    
+        const liItems = document.querySelectorAll("#phrase li");                    
+        liItems.forEach(liItem =>{
+        liItem.parentNode.removeChild(li);
         })
-    }
+            
+        if(keyboardButtons.classList.contains("wrong")){
+            keyboardButtons.classList.remove("wrong");
+            }else if(keyboardButtons.classList.contains("chosen")){
+            keyboardButtons.classList.remove("chosen");
+        
+    
+        for(const heart of hearts) {
+            heart.src = "images/liveHeart.png";            
+        }    
 }
-
-buttonReset.addEventListener("click", ()=>{
-    this.resetGame();
-});
-
+}
 }
