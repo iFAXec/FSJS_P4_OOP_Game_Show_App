@@ -6,9 +6,9 @@ class Game {
     constructor(){
         this.missed = 0;
         this.phrases = [
-            new Phrase ("That which does not kill us makes us stronger"),
-            new Phrase ("Singh is King"),
-            new Phrase ("Fortune favors the bold"),
+            new Phrase ("To Kill a Mockingbird"),
+            new Phrase ("Peaky Blinders"),
+            new Phrase ("Mrs Doubtfire"),
             new Phrase ("Time is money"),
             new Phrase ("Practice makes perfect")
         ];
@@ -85,11 +85,11 @@ class Game {
         startOverlay.style.display = "block";
 
         if(this.missed === 5){
-            gameOverMessage.innerHTML = "Sorry!,Better Luck Next Time";
+            gameOverMessage.innerHTML = "Sorry! Better Luck Next Time";
             startOverlay.classList.add("lose");
             startOverlay.classList.remove("start");
         } else{            
-            startOverlay.innerHTML = "You Win!, Great Job!"
+            startOverlay.innerHTML = "You Win! Great Job!"
             startOverlay.classList.add("win");
             startOverlay.classList.remove("start");            
         }
@@ -107,7 +107,7 @@ class Game {
         
         if(this.activePhrase.checkLetter(button.innerHTML)){
             button.classList.add("chosen");
-            this.activePhrase.showMatchedLetter();
+            this.activePhrase.showMatchedLetter(button.innerHTML);
             this.checkForWin();
         } else{
             button.classList.add("wrong");
@@ -138,6 +138,9 @@ class Game {
         //replaces the lost heart with live hearts
         for(const heart of hearts) {
             heart.src = "images/liveHeart.png";            
-        }    
+        }  
+        
+     Phrase.addPhraseToDisplay();
+        
 }
 }

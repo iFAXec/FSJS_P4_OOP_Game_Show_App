@@ -9,7 +9,7 @@ const hearts = document.getElementsByClassName("tries");
 let game;
 buttonReset.addEventListener("click", ()=>{
     if(game !== undefined){
-        game.resetGame();
+        game.resetGame();                                  
     }    
     game = new Game;
     game.startGame();   
