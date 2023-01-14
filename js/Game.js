@@ -7,7 +7,7 @@ class Game {
         this.missed = 0;
         this.phrases = [
             new Phrase ("That which does not kill us makes us stronger"),
-            new Phrase ("The journey of a thousand miles begins with one step"),
+            new Phrase ("Singh is King"),
             new Phrase ("Fortune favors the bold"),
             new Phrase ("Time is money"),
             new Phrase ("Practice makes perfect")
@@ -121,20 +121,23 @@ class Game {
 
     
     resetGame(){    
-        const liItems = document.querySelectorAll("#phrase li");                    
-        liItems.forEach(liItem =>{
-        liItem.parentNode.removeChild(li);
+        //removes all the li element from ul
+        const liElements = document.querySelectorAll("#phrase ul");
+
+        liElements.forEach(liElement =>{
+            liElement.parentNode.removeChild(liElement);
         })
-            
-        if(keyboardButtons.classList.contains("wrong")){
-            keyboardButtons.classList.remove("wrong");
-            }else if(keyboardButtons.classList.contains("chosen")){
-            keyboardButtons.classList.remove("chosen");
         
-    
+       //Enables all the keys and removes class chosen and wrong 
+       const keys = document.querySelectorAll(".key");
+        keys.forEach(key=>{
+            key.classList.remove("chosen","wrong");
+            key.disabled = false;
+        })
+        
+        //replaces the lost heart with live hearts
         for(const heart of hearts) {
             heart.src = "images/liveHeart.png";            
         }    
-}
 }
 }
