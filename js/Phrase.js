@@ -51,12 +51,17 @@ addPhraseToDisplay(){
     showMatchedLetter(letter){
     const selectedLetters = document.querySelectorAll(".letter");
 
-    for (const char of selectedLetters) {
+    for (const char of selectedLetters) {   
+        //console.log(selectedLetters);
+
         if (char.innerHTML === letter) {
+            //console.log(char);
             char.classList.add("show");
             char.classList.remove("hide");       
     }
 }
 }
 }
+
+
 

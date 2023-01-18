@@ -27,6 +27,7 @@ class Game {
       return randomPhrase;
     }
 
+    
     /**
      * Begins game by selecting a random phrase and displaying it to user
      */
@@ -42,32 +43,28 @@ class Game {
      * Checks for winning move
      * @return {Boolean} True if game has been won, false if game wasn't
      */
-    checkForWin(){
-        const letters = document.querySelectorAll(".letter");
-        for (const char of letters) {           
-            if(char.classList.contains("show")){
-                return true;
-            }else{
-                return false;
-            }         
-        }     
+    
+    //check for all the elements with hide class 
+    //If all hide class are removed then return true else return false
+    checkForWin(){        
+        const hideLetter = document.querySelectorAll(".hide");
+        if(hideLetter.length === 0){
+            return true;
+        } else{
+            return false;
+        }        
     }
+
     /**
      * Increases the value of missed property
      * remove a life from scroreboard
      * Check if player has remaining lives and end game if player is out
      */
     removeLife(){   
-        const hearts = document.getElementsByClassName("tries");        
+        const hearts = document.querySelectorAll(".tries");        
         hearts[this.missed].firstChild.src = "images/lostHeart.png";
         this.missed += 1;
-
-        // for (let i = 0; i < hearts.length; i++) {
-        //     const heart = hearts[i];
-        //     heart.src = "images/lostHeart.png";
-        //     this.missed += 1;           
-        // }
-        
+             
         if(this.missed === 5){
             this.gameOver();
         }
@@ -138,9 +135,10 @@ class Game {
         //replaces the lost heart with live hearts
         for(const heart of hearts) {
             heart.src = "images/liveHeart.png";            
-        }  
-        
-     Phrase.addPhraseToDisplay();
-        
+        }        
+             
 }
 }
+
+//const game = new Game();
+//console.log(game.getRandomPhrase());
