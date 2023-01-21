@@ -19,10 +19,7 @@ addPhraseToDisplay(){
     const phraseArray = this.phrase.split("");
     const ul = document.querySelector("#phrase ul");
 
-    let htmlPhrase = " ";    
-    htmlPhrase += `<div id="phrase" class="section">`;
-    htmlPhrase += `<ul>`;
-
+    let htmlPhrase = " ";
     phraseArray.forEach(letter => {
      if(letter !== " "){
         htmlPhrase += `<li class="hide letter">${letter}</li>`;            
