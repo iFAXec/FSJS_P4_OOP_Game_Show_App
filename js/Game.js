@@ -17,7 +17,7 @@ class Game {
             new Phrase ("Time is money"),
             new Phrase ("Practice makes perfect")
         ];
-        this.activePhrase = "null";
+        this.activePhrase = null;
     }
 
 
