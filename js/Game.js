@@ -97,7 +97,6 @@ class Game {
         const startOverlay = document.querySelector(".start");
         startOverlay.style.display = "block";
 
-
         if(this.missed === 5){
             gameOverMessage.innerHTML = "Sorry! Better Luck Next Time";
             startOverlay.classList.add("lose");
