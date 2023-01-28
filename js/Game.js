@@ -103,7 +103,7 @@ class Game {
             startOverlay.classList.add("lose");
             startOverlay.classList.remove("start");
         } else{            
-            startOverlay.innerHTML = "You Win! Great Job!"
+            gameOverMessage.innerHTML = "You Win! Great Job!"
             startOverlay.classList.add("win");
             startOverlay.classList.remove("start");            
         }
