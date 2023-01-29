@@ -94,7 +94,7 @@ class Game {
     //If no, then adds Win class and removes start class
     gameOver(){
         const gameOverMessage = document.getElementById("game-over-message");
-        const startOverlay = document.querySelector(".start");
+        const startOverlay = document.querySelector("#overlay");
         startOverlay.style.display = "block";
 
         if(this.missed === 5){
